@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <audio id="gameDraw" src="./assets/gameDraw.mp3" ></audio>
+    <audio id="move" src="./assets/move.wav" ></audio>
+    <audio id="win" src="./assets/win.wav" ></audio>
+    <div class="container">
+        <div class="popup hide">
+            <h1 id="info">X wins</h1>
+            <button id="resetGame">Play Again</button>
+        </div>
+        <div class="board">
+            <div class="box br bb"></div>
+            <div class="box br bl bb"></div>
+            <div class="box bl bb"></div>
+            <div class="box bt bb br"></div>
+            <div class="box bt bb br bl"></div>
+            <div class="box bl bt bb"></div>
+            <div class="box bt br"></div>
+            <div class="box bt br bl"></div>
+            <div class="box bl bt"></div>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>

@@ -1,0 +1,113 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --bg:#5e3ec4;
+    --border:#4423a5;
+    --x:#ce5e27;
+    --o:#fefefe;
+}
+body{
+    height: 100vh;
+    width: 100%;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    background:var(--bg);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+}
+.board{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: min(450px,90%);
+    aspect-ratio: 1/1;
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3,1fr);
+}
+.box{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+}
+.box.x{
+    color:var(--x);
+}
+.box.o{
+    color:var(--o);
+}
+.board .box.bt{
+    border-top:10px solid var(--border);
+}
+.board .box.bb{
+    border-bottom:10px solid var(--border);
+}
+.board .box.bl{
+    border-left:10px solid var(--border);
+}
+.board .box.br{
+    border-right:10px solid var(--border);
+}
+.popup{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(1);
+    transition: all 0.7s;
+    z-index: 100;
+    backdrop-filter: blur(5px);
+    padding: 1rem;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+}
+/* .popup.hide{
+    display: none;
+    transform: translate(-50%,-50%) scale(1.5);
+} */
+.popup #info{
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    color: white;
+    text-shadow: 0 2px 3px black;
+}
+.popup #resetGame{
+    border: none;
+    background:var(--o);
+    color:var(--border);
+    box-shadow: 2px 2px 5px 0 #555;
+    padding: 0.3rem 0.6rem;
+    margin-top: 0.5rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width:450px) {
+     .board{
+        top: 15%;
+        transform: translate(-50%,0%);
+     } 
+     .board .box.bt{
+        border-top:5px solid var(--border);
+    }
+    .board .box.bb{
+        border-bottom:5px solid var(--border);
+    }
+    .board .box.bl{
+        border-left:5px solid var(--border);
+    }
+    .board .box.br{
+        border-right:5px solid var(--border);
+    }  
+    .box{
+        font-size: 3rem;
+        font-weight: 600;
+    }
+}
